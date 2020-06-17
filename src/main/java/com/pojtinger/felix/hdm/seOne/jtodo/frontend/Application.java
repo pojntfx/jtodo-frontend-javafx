@@ -7,7 +7,8 @@ import javafx.stage.Stage;
 public class Application extends javafx.application.Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        var scene = new Scene(FXMLLoader.load(getClass().getResource("./todos/TodosView.fxml")));
+        var scene = new Scene(FXMLLoader.load(getClass().getResource("todos/TodosView.fxml")));
+        scene.getStylesheets().add(getClass().getResource("ApplicationStyles.css").toExternalForm());
 
         primaryStage.setTitle("JTodo");
         primaryStage.setScene(scene);
