@@ -1,6 +1,7 @@
 package com.pojtinger.felix.hdm.seOne.jtodo.frontend.todos;
 
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 import com.almasb.fxgl.dsl.FXGL;
@@ -55,6 +56,8 @@ public class TodosController implements Initializable {
 
         this.eventBus.addEventHandler(InteropEvent.ANY, (event) -> {
             System.out.println("Received event");
+
+            this.todosList.getItems().add(new Date().toLocaleString());
         });
     }
 }
