@@ -2,7 +2,7 @@
 
 A minimal JavaFX frontend for JTodo, an example Todo app for Stuttgart Media University SE1.
 
-![Maven CI](https://github.com/pojntfx/jtodo-frontend/workflows/Maven%20CI/badge.svg)
+![Maven CI](https://github.com/pojntfx/jtodo-frontend-javafx/workflows/Maven%20CI/badge.svg)
 
 ## Overview
 
@@ -10,7 +10,7 @@ This project is a simple JavaFX todo app that connects to the [JTodo Backend](ht
 
 ## Installation
 
-A JAR is available on [GitHub Actions](https://github.com/pojntfx/jtodo-frontend/actions).
+A JAR is available on [GitHub Actions](https://github.com/pojntfx/jtodo-frontend-javafx/actions).
 
 ## License
 
