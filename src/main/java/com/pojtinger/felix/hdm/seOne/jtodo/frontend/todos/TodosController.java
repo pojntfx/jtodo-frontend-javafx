@@ -3,6 +3,8 @@ package com.pojtinger.felix.hdm.seOne.jtodo.frontend.todos;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.pojtinger.felix.hdm.seOne.jtodo.frontend.JTodoGrpc.JTodoBlockingStub;
+
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,10 +37,12 @@ public class TodosController implements Initializable {
         }
     }
 
+    public void setClient(JTodoBlockingStub blockingStub) {
+        // this.todosModel.setClient(blockingStub);
+    }
+
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        Platform.runLater(() -> {
-            this.createTodoTitleTextField.requestFocus();
-        });
+        Platform.runLater(() -> this.createTodoTitleTextField.requestFocus());
     }
 }
