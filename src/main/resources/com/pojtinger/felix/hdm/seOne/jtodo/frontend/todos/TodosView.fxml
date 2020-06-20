@@ -14,8 +14,8 @@
    <top>
       <HBox spacing="8.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="createTodoTitleTextField" onKeyPressed="#handleCreateTodoTitleTextFieldChange" promptText="New Todo Title" HBox.hgrow="ALWAYS" />
-            <Button fx:id="createTodoButton" mnemonicParsing="false" onAction="#handleCreateTodoButtonClick" text="Create Todo" />
+            <TextField fx:id="createTodoTitleTextField" onAction="#handleCreateTodo" promptText="New Todo Title" HBox.hgrow="ALWAYS" />
+            <Button fx:id="createTodoButton" mnemonicParsing="false" onAction="#handleCreateTodo" text="Create Todo" />
          </children>
          <BorderPane.margin>
             <Insets bottom="8.0" />

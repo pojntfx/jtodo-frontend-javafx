@@ -1,20 +1,15 @@
 package com.pojtinger.felix.hdm.seOne.jtodo.frontend.todos;
 
 import java.net.URL;
-import java.util.Date;
 import java.util.ResourceBundle;
 
-import com.almasb.fxgl.dsl.FXGL;
-import com.almasb.fxgl.event.EventBus;
-import com.pojtinger.felix.hdm.seOne.jtodo.frontend.InteropEvent;
-
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 
 public class TodosController implements Initializable {
     TodosModel todosModel = new TodosModel();
@@ -28,9 +23,7 @@ public class TodosController implements Initializable {
     @FXML
     Button createTodoButton;
 
-    EventBus eventBus;
-
-    public void handleCreateTodoButtonClick(ActionEvent event) {
+    public void handleCreateTodo(ActionEvent event) {
         var newTodoTitle = this.createTodoTitleTextField.getText();
 
         if (!newTodoTitle.isEmpty()) {
@@ -40,24 +33,12 @@ public class TodosController implements Initializable {
 
             this.createTodoTitleTextField.requestFocus();
         }
-
-        FXGL.getGameWorld().getEntities().get(0).translate(5, 5);
-
-        FXGL.getEventBus().fireEvent(new ActionEvent());
-    }
-
-    public void handleCreateTodoTitleTextFieldChange(KeyEvent event) {
-        System.out.printf("New todo title: %s\n", this.createTodoTitleTextField.getText());
     }
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        this.eventBus = FXGL.getEventBus();
-
-        this.eventBus.addEventHandler(InteropEvent.ANY, (event) -> {
-            System.out.println("Received event");
-
-            this.todosList.getItems().add(new Date().toLocaleString());
+        Platform.runLater(() -> {
+            this.createTodoTitleTextField.requestFocus();
         });
     }
 }
