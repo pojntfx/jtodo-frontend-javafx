@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pojtinger.felicitas.hdm.seOne.jtodo.frontend.todos.TodosController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@TodosStyles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pojtinger.felicitas.hdm.seOne.jtodo.frontend.todos.TodosController">
    <center>
       <ListView fx:id="todosList" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </center>
@@ -15,7 +15,7 @@
       <HBox spacing="8.0" BorderPane.alignment="CENTER">
          <children>
             <TextField fx:id="createTodoTitleTextField" onAction="#handleCreateTodo" promptText="New Todo Title" HBox.hgrow="ALWAYS" />
-            <Button fx:id="createTodoButton" mnemonicParsing="false" onAction="#handleCreateTodo" text="Create Todo" />
+            <Button fx:id="createTodoButton" mnemonicParsing="false" onAction="#handleCreateTodo" styleClass="primary" text="Create Todo" />
          </children>
          <BorderPane.margin>
             <Insets bottom="8.0" />
