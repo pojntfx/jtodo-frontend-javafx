@@ -17,7 +17,7 @@ public class Application extends javafx.application.Application {
         var loginScene = new Scene(loginView.asParent(), 600, 400);
 
         primaryStage.setScene(loginScene);
-        primaryStage.setTitle("JTodo");
+        primaryStage.setTitle("Login");
 
         primaryStage.show();
     }
