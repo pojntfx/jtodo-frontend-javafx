@@ -1,17 +1,23 @@
 package com.pojtinger.felix.hdm.seOne.jtodo.frontend;
 
-import javafx.fxml.FXMLLoader;
+import com.pojtinger.felix.hdm.seOne.jtodo.frontend.login.LoginController;
+import com.pojtinger.felix.hdm.seOne.jtodo.frontend.login.LoginModel;
+import com.pojtinger.felix.hdm.seOne.jtodo.frontend.login.LoginView;
+
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Application extends javafx.application.Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        var scene = new Scene(FXMLLoader.load(getClass().getResource("login/LoginView.fxml")));
-        scene.getStylesheets().add(getClass().getResource("ApplicationStyles.css").toExternalForm());
+        var loginModel = new LoginModel();
+        var loginController = new LoginController(loginModel);
+        var loginView = new LoginView(loginController, loginModel);
 
+        var loginScene = new Scene(loginView.asParent(), 600, 400);
+
+        primaryStage.setScene(loginScene);
         primaryStage.setTitle("JTodo");
-        primaryStage.setScene(scene);
 
         primaryStage.show();
     }
