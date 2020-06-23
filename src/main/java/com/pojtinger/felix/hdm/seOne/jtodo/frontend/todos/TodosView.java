@@ -29,6 +29,8 @@ public class TodosView {
                 .addListener((obs, oldTitle, newTitle) -> this.controller.setNewTodoTitle(newTitle));
 
         this.createTodoButton = new Button("Create todo");
+        this.createTodoButton.setStyle("-fx-base: royalblue;");
+        this.createTodoButton.setOnAction((event) -> this.controller.createTodo());
 
         var toolbar = new HBox(this.newTodoTitleTextField, this.createTodoButton);
         toolbar.setSpacing(8);

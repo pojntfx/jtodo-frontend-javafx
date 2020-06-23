@@ -10,4 +10,8 @@ public class TodosController {
     public void setNewTodoTitle(String title) {
         this.model.setNewTodoTitle(title);
     }
+
+    public void createTodo() {
+        this.model.createTodo();
+    }
 }
