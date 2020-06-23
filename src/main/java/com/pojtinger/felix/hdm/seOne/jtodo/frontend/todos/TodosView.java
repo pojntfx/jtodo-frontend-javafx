@@ -27,10 +27,23 @@ public class TodosView {
         HBox.setHgrow(this.newTodoTitleTextField, Priority.ALWAYS);
         this.newTodoTitleTextField.textProperty()
                 .addListener((obs, oldTitle, newTitle) -> this.controller.setNewTodoTitle(newTitle));
+        this.newTodoTitleTextField.setOnAction((event) -> {
+            this.controller.createTodo();
+
+            this.newTodoTitleTextField.clear();
+
+            this.newTodoTitleTextField.requestFocus();
+        });
 
         this.createTodoButton = new Button("Create todo");
         this.createTodoButton.setStyle("-fx-base: royalblue;");
-        this.createTodoButton.setOnAction((event) -> this.controller.createTodo());
+        this.createTodoButton.setOnAction((event) -> {
+            this.controller.createTodo();
+
+            this.newTodoTitleTextField.clear();
+
+            this.newTodoTitleTextField.requestFocus();
+        });
 
         var toolbar = new HBox(this.newTodoTitleTextField, this.createTodoButton);
         toolbar.setSpacing(8);
