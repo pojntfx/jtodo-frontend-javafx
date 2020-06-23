@@ -25,6 +25,8 @@ public class TodosView {
         this.newTodoTitleTextField = new TextField();
         this.newTodoTitleTextField.setPromptText("New todo title");
         HBox.setHgrow(this.newTodoTitleTextField, Priority.ALWAYS);
+        this.newTodoTitleTextField.textProperty()
+                .addListener((obs, oldTitle, newTitle) -> this.controller.setNewTodoTitle(newTitle));
 
         this.createTodoButton = new Button("Create todo");
 
@@ -32,5 +34,7 @@ public class TodosView {
         toolbar.setSpacing(8);
 
         this.root.setTop(toolbar);
+
+        this.model.newTodoTitle.addListener((obs, oldTitle, newTitle) -> this.newTodoTitleTextField.setText(newTitle));
     }
 }
