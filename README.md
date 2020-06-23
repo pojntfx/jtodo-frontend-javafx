@@ -6,7 +6,7 @@ A minimal JavaFX frontend for JTodo, an example Todo app for Stuttgart Media Uni
 
 ## Overview
 
-This project is a simple JavaFX todo app that connects to the [JTodo Server](https://pojntfx.github.io/jtodo-backend/).
+This project is a simple JavaFX todo app that connects to the [JTodo-Server](https://pojntfx.github.io/jtodo-backend/).
 
 ## Installation
 
