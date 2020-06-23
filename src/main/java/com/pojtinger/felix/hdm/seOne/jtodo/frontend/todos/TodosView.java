@@ -1,7 +1,10 @@
 package com.pojtinger.felicitas.hdm.seOne.jtodo.frontend.todos;
 
+import javafx.application.Platform;
+import javafx.collections.ListChangeListener;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -14,6 +17,7 @@ public class TodosView {
     public BorderPane root;
     private TextField newTodoTitleTextField;
     private Button createTodoButton;
+    private ListView<String> todosList;
 
     public TodosView(TodosModel model, TodosController controller) {
         this.model = model;
@@ -48,8 +52,21 @@ public class TodosView {
         var toolbar = new HBox(this.newTodoTitleTextField, this.createTodoButton);
         toolbar.setSpacing(8);
 
-        this.root.setTop(toolbar);
+        this.todosList = new ListView<String>();
+        BorderPane.setMargin(this.todosList, new Insets(8, 0, 0, 0));
 
         this.model.newTodoTitle.addListener((obs, oldTitle, newTitle) -> this.newTodoTitleTextField.setText(newTitle));
+        this.model.todos.addListener((ListChangeListener<String>) change -> {
+            while (change.next()) {
+                if (change.wasAdded()) {
+                    this.todosList.getItems().addAll(change.getAddedSubList());
+                }
+            }
+        });
+
+        this.root.setTop(toolbar);
+        this.root.setCenter(this.todosList);
+
+        Platform.runLater(() -> this.newTodoTitleTextField.requestFocus());
     }
 }
