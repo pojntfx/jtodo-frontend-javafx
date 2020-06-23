@@ -11,6 +11,9 @@
         </license>
     </licenses>
 
+    <name>JTodo</name>
+    <description>This project is a simple JavaFX todo app that connects to the JTodo-Server.</description>
+
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -20,7 +23,6 @@
 
         <appId>com.pojtinger.felicitas.hdm.seOne.jtodo.frontend</appId>
         <appUUID>b9c56a7b-e1d8-4461-a5c8-685adfedec12</appUUID>
-        <appName>JTodo</appName>
         <appMaintainer>felicitas@pojtinger.com</appMaintainer>
         <appLicense>AGPL-3.0</appLicense>
         <appCategory>Utility</appCategory>
@@ -166,7 +168,9 @@
                                 <argument>--input</argument>
                                 <argument>target</argument>
                                 <argument>--name</argument>
-                                <argument>${appName}</argument>
+                                <argument>${project.name}</argument>
+                                <argument>--description</argument>
+                                <argument>${project.description}</argument>
                                 <argument>--main-jar</argument>
                                 <argument>${project.artifactId}-${project.version}.jar</argument>
                                 <argument>--main-class</argument>
@@ -195,7 +199,6 @@
             </build>
         </profile>
 
-
         <profile>
             <id>platform-apple</id>
             <activation>
@@ -223,7 +226,9 @@
                                 <argument>--input</argument>
                                 <argument>target</argument>
                                 <argument>--name</argument>
-                                <argument>${appName}</argument>
+                                <argument>${project.name}</argument>
+                                <argument>--description</argument>
+                                <argument>${project.description}</argument>
                                 <argument>--main-jar</argument>
                                 <argument>${project.artifactId}-${project.version}.jar</argument>
                                 <argument>--main-class</argument>
@@ -270,7 +275,9 @@
                                 <argument>--input</argument>
                                 <argument>target</argument>
                                 <argument>--name</argument>
-                                <argument>${appName}</argument>
+                                <argument>${project.name}</argument>
+                                <argument>--description</argument>
+                                <argument>${project.description}</argument>
                                 <argument>--main-jar</argument>
                                 <argument>${project.artifactId}-${project.version}.jar</argument>
                                 <argument>--main-class</argument>
