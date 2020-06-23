@@ -11,7 +11,7 @@ jobs:
       - name: Set up JDK 16
         uses: actions/setup-java@v1
         with:
-          java-version: 16.ea.2
+          java-version: 16-ea.2
       - name: Build with Maven
         run: mvn -B package --file pom.xml
       - run: cp target/*.jar staging
@@ -36,7 +36,7 @@ jobs:
       - name: Set up JDK 16
         uses: actions/setup-java@v1
         with:
-          java-version: 16.ea.2
+          java-version: 16-ea.2
       - name: Build with Maven
         run: mvn -B package --file pom.xml
       - uses: actions/upload-artifact@v1
@@ -59,7 +59,7 @@ jobs:
       - name: Set up JDK 16
         uses: actions/setup-java@v1
         with:
-          java-version: 16.ea.2
+          java-version: 16-ea.2
       - name: Build with Maven
         run: mvn -B package --file pom.xml
       - uses: actions/upload-artifact@v1
@@ -82,7 +82,7 @@ jobs:
       - name: Set up JDK 16
         uses: actions/setup-java@v1
         with:
-          java-version: 16.ea.2
+          java-version: 16-ea.2
       - name: Build with Maven
         run: mvn -B package --file pom.xml
       - uses: actions/upload-artifact@v1
