@@ -10,7 +10,7 @@ This project is a simple JavaFX todo app that connects to the [JTodo Backend](ht
 
 ## Installation
 
-A JAR is available on [GitHub Releases](https://github.com/pojntfx/jtodo-frontend-javafx/releases).
+Universal, Linux, Apple and Microsoft packages are available on [GitHub Releases](https://github.com/pojntfx/jtodo-frontend-javafx/releases).
 
 ## License
 
