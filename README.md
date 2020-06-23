@@ -1,4 +1,4 @@
-# JTodo JavaFX Frontend
+# JTodo
 
 A minimal JavaFX frontend for JTodo, an example Todo app for Stuttgart Media University SE1.
 
@@ -6,7 +6,7 @@ A minimal JavaFX frontend for JTodo, an example Todo app for Stuttgart Media Uni
 
 ## Overview
 
-This project is a simple JavaFX todo app that connects to the [JTodo Backend](https://github.com/pojntfx/jtodo-backend).
+This project is a simple JavaFX todo app that connects to the [JTodo Server](https://pojntfx.github.io/jtodo-backend/).
 
 ## Installation
 
@@ -14,6 +14,6 @@ Universal, Linux, Apple and Microsoft packages are available on [GitHub Releases
 
 ## License
 
-JTodo JavaFX Frontend (c) 2020 Felicitas Pojtinger
+JTodo (c) 2020 Felicitas Pojtinger
 
 SPDX-License-Identifier: AGPL-3.0
